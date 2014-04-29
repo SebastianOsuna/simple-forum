@@ -1,2 +1,4 @@
 global:
-    password: MyPassword
+    password: ~
+headers:
+    accessToken: ~

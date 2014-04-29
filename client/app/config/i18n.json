@@ -1,0 +1,22 @@
+{
+	"EN": {
+		"login": {
+			"username": "Username",
+			"password": "Password",
+			"submit": "Sign in",
+            "wrongPassword": "Wrong password.",
+            "unknownError": "Unknown error."
+        },
+        "loading": "Loading..."
+	},
+	"ES": {
+		"login": {
+			"username": "Usuario",
+			"password": "Contraseña",
+			"submit": "Entrar",
+            "wrongPassword": "Contraseña incorrecta.",
+            "unknownError": "Error desconocido."
+		},
+        "loading": "Cargando..."
+	}
+}

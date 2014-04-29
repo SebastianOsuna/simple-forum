@@ -1,0 +1,30 @@
+.login-box {
+    display: block;
+    border: 1px solid black;
+    padding: 15px;
+    width: 400px;
+    margin: 0px auto;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.login-box label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.login-box button {
+    width: 150px;
+}
+
+.login-box input {
+    width: 200px;
+}
+
+!div > #login-error {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}

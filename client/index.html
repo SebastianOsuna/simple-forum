@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Simple Forum</title>
+    <link rel="stylesheet" type="text/css" href="app/css/index.css">
+</head>
+<body>
+	<div>
+		<div class="login-box">
+            <form method="POST" action="sessions/" id="login">
+    			<div>
+    				<span id="login-error"></span>
+    			</div>
+    			<div>
+    				<label i18n-text="login.username"></label>
+    				<input type="text" name="username" id="username" />
+    			</div>
+    			<div>
+    				<label i18n-text="login.password"></label>
+    				<input type="password" name="password" id="password" />
+    			</div>
+    			<div>
+    				<button id="submit" class="submit" i18n-text="login.submit" >Submit</button>
+    			</div>
+            </form>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- See https://github.com/SebastianOsuna/i18n for more details -->
+	<script type="text/javascript" id="i18n" src="app/js/lib/i18n.min.js" i18n-src="app/config/i18n.json" i18n-locale="ES"></script>
+    <script type="text/javascript" src="app/js/app.js"></script>
+
+</body>
+</html>
