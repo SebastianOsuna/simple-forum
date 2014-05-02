@@ -1,7 +1,11 @@
 SimpleForum::Application.routes.draw do
+    
     post 'sessions/' => 'sessions#requestSession'
-    get 'sessions/' => 'sessions#checkToken'
     match 'sessions/' => 'sessions#options', :constraints => {:method => 'OPTIONS'}, via: [:options]
+    get 'sessions/' => 'sessions#checkToken'
+    match 'post' => 'forum#options', :constraints => {:method => 'OPTIONS'}, via: [:options]
+    get 'post' => 'forum#get_posts'
+    post 'post' => 'forum#new_post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
