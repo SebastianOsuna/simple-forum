@@ -1,0 +1,33 @@
+.new-post {
+    display: block;
+    width: 500px;
+    margin: 0px auto;
+}
+
+.new-post textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 500px;
+}
+
+.thread {
+
+}
+
+.post {
+    border: 1px solid black;
+    display: inline-block;
+
+}
+
+.post .name {
+    color: lightgray;
+}
+
+.new-post-success {
+    color: green;
+}
+
+.new-post-error {
+    color: red;
+}

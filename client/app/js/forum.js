@@ -7,7 +7,45 @@
     User.token = localStorage.token;
     User.name = localStorage.name;
     User.id = localStorage.id;
-    console.log(User);
+
+    $( "#new-post" ).submit( function( event ) {
+        var form = event.target;
+        // New post data
+        var data = {
+            content: $( "#new-post-text" ).val() 
+        };
+        if( !data.content ) {
+            return false;
+        }
+        // Disable post button
+        $( "#new-post-button" ).prop( 'disabled', true );
+        $( "#new-post-reponse" ).attr( { class: '' } ).text( '' );
+        // Send request
+        $.ajax( {
+            url: SERVER_URL + form.getAttribute( 'action' ),
+            type: "POST",
+            data: data,
+            beforeSend: function( xhr ) { xhr.setRequestHeader( 'X-Access-Token', User.token ); }
+        } ).done( function( data ) {
+            // Reset post data
+            $( "#new-post-text" ).val( '' );
+            $( "#new-post-reponse" ).attr( { class: 'new-post-success' } ).text( I18N.resolve( 'post.success' ) );
+            addPost( data );
+        } ).fail( function( err ) {
+            if( err.status == 401 ) {
+                // Wrong password
+                $( "#new-post-reponse" ).attr( { class: 'new-post-error' } ).text( I18N.resolve( 'post.forbidden' ) );
+                logout();
+            } else {
+                // Unknown error
+                $( "#new-post-reponse" ).attr( { class: 'new-post-error' } ).text( I18N.resolve( 'post.unknownError' ) );
+            }
+        } ).always( function() {
+            // Enable send button
+            $( "#new-post-button" ).prop( 'disabled', false );
+        } );
+        return false;
+    } );
 
     // Logout function
     var logout = function() {
@@ -23,24 +61,48 @@
 
     // Check token validity
     var checkToken = function() {
-        console.log( 'checkToken' )
         $.ajax( {
             url: SERVER_URL + "sessions/",
             type: "GET",
-            data: { token: User.token },
+            //data: { token: User.token },
             beforeSend: function( xhr ) { xhr.setRequestHeader( 'X-Access-Token', User.token ); }
         } ).done( loadForum ).fail( logout ); 
         // If valid, load forum. If not, logout.
     };
 
     var loadForum = function() {
-
+        getPosts();
     };
+
+    var getPosts = function() {
+
+        var query = {};
+
+        $.ajax( {
+            url: SERVER_URL + "post",
+            type: "GET",
+            data: query,
+            beforeSend: function( xhr ) { xhr.setRequestHeader( 'X-Access-Token', User.token ); }
+        } ).done( function( data ) {
+            addPost( data );
+        } ).fail( function() {
+            console.log( arguments );
+        } );
+    };
+
+    var addPost = function ( posts ) {
+        if( posts instanceof Array ) {
+            // Handle an array of posts
+            posts.forEach( function( i, o ) { addPost( o ); } );
+        } else {
+            // Handle a single post
+        }
+    }
 
     // Verify credentials
     if( User.token && User.name && User.id ) {
         checkToken();
-        $( "#content" ).text( User.name );
+        $( "#user-name" ).text( User.name );
     } else {
         logout();
     }

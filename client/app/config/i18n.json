@@ -7,7 +7,12 @@
             "wrongPassword": "Wrong password.",
             "unknownError": "Unknown error."
         },
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "welcome": "Welcome",
+        "post": {
+            "new-placeholder": "Create a new post ...",
+            "new-message": "New post"
+        }
 	},
 	"ES": {
 		"login": {
@@ -17,6 +22,14 @@
             "wrongPassword": "Contraseña incorrecta.",
             "unknownError": "Error desconocido."
 		},
-        "loading": "Cargando..."
+        "loading": "Cargando...",
+        "welcome": "Bienvenido",
+        "post": {
+            "new-placeholder": "Nuevo comentario ...",
+            "new-message": "Comentar",
+            "success": "Comentario enviado.",
+            "forbidden": "Debes ingresar antes de comentar.",
+            "unknownError": "Error desconocido."
+        }
 	}
 }

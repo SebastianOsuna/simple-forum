@@ -1,10 +1,42 @@
 <html>
 <head>
     <title>Simple Forum</title>
+    <link rel="stylesheet" type="text/css" href="app/css/forum.css">
 </head>
 <body>
     <div id="content">
-
+        <div class="welcome">
+            <span i18n-text="welcome">Welcome</span>&nbsp;<span id="user-name"></span>
+        </div>
+        <div>
+            <fieldset class="new-post">
+                <legend i18n-text="post.new-message">New post</legend>
+                <span id="new-post-reponse"></span>
+                <form method="POST" action="post" id="new-post">
+                    <div>
+                        <textarea id="new-post-text" name="new-post-text" i18n-placeholder="post.new-placeholder"></textarea>
+                    </div>
+                    <div>
+                        <button id="new-post-button">Commentar</button>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <div class="forum-container">
+            <ul id="forum-thread" class="thread">
+                <li class="post">
+                    <div class="name">
+                        Usuario
+                    </div>
+                    <div class="message">
+                        Mensaje
+                    </div>
+                    <div class="date">
+                        Fecha
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <!-- See https://github.com/SebastianOsuna/i18n for more details -->
