@@ -5,9 +5,9 @@
 </head>
 <body>
     <div id="content">
-        <div class="welcome">
+        <h1 class="welcome">
             <span i18n-text="welcome">Welcome</span>&nbsp;<span id="user-name"></span>
-        </div>
+        </h1>
         <div>
             <fieldset class="new-post">
                 <legend i18n-text="post.new-message">New post</legend>
@@ -24,18 +24,8 @@
         </div>
         <div class="forum-container">
             <ul id="forum-thread" class="thread">
-                <li class="post">
-                    <div class="name">
-                        Usuario
-                    </div>
-                    <div class="message">
-                        Mensaje
-                    </div>
-                    <div class="date">
-                        Fecha
-                    </div>
-                </li>
             </ul>
+            <button i18n-text="thread.more-posts" id="more-posts"></button>
         </div>
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>

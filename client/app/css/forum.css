@@ -8,20 +8,40 @@
     width: 100%;
     min-width: 100%;
     max-width: 500px;
+    height: 150px;
+}
+
+.forum-container button {
+    display: block;
+    margin: 0px auto;
 }
 
 .thread {
-
+    padding: 0px;
 }
 
 .post {
     border: 1px solid black;
-    display: inline-block;
-
+    display: block;
+    padding: 7px;
+    width: 500px;
+    margin: 0px auto;
 }
 
 .post .name {
-    color: lightgray;
+    color: gray;
+    font-weight: bold;
+    text-align: right;
+    font-size: 18px;
+}
+
+.post .message {
+    margin: 5px;
+    word-wrap: break-word;
+}
+
+.post .date {
+    font-size: 12px;
 }
 
 .new-post-success {

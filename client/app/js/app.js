@@ -22,7 +22,7 @@
             localStorage.setItem( 'token', User.token );
             localStorage.setItem( 'name', User.name );
             localStorage.setItem( 'id', User.id );
-            console.log
+            
             var url = window.location.protocol + "//" + window.location.host + window.location.pathname + "forum.html";
             window.location.href = url;
         } ).fail( function( err, errName ) {

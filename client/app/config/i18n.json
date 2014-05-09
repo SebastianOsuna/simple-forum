@@ -30,6 +30,9 @@
             "success": "Comentario enviado.",
             "forbidden": "Debes ingresar antes de comentar.",
             "unknownError": "Error desconocido."
+        },
+        "thread" : {
+            "more-posts": "Cargar más"
         }
 	}
 }
